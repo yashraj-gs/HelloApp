@@ -5,12 +5,14 @@ public class HelloApp {
 
         if (args.length > 0) {
             StringBuilder names = new StringBuilder();
+            boolean first = true;
 
-            for (int i = 0; i < args.length; i++) {
-                names.append(args[i]);
-                if (i < args.length - 1) {
+            for (String n : args) {
+                if (!first) {
                     names.append(", ");
                 }
+                names.append(n);
+                first = false;
             }
 
             name = names.toString();
