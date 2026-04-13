@@ -5,17 +5,15 @@ public class HelloApp {
 
         if (args.length > 0) {
             StringBuilder names = new StringBuilder();
-            boolean first = true;
 
             for (String n : args) {
-                if (!first) {
-                    names.append(", ");
-                }
-                names.append(n);
-                first = false;
+                names.append(n).append(", ");
             }
 
-            name = names.toString();
+            // remove last ", "
+            if (names.length() > 0) {
+                name = names.substring(0, names.length() - 2);
+            }
         }
 
         System.out.println("Hello, " + name + "!");
